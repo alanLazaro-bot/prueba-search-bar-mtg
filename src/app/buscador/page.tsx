@@ -1,22 +1,19 @@
-'use client'
-import { useState } from 'react'
-import {useSearch} from '@/hooks/useSearch'
-import {CardsList} from '@/app/buscador/lista-cartas'
-
-
+"use client";
+import { useState } from "react";
+import { useSearch } from "@/hooks/useSearch";
+import { CardsList } from "@/app/buscador/lista-cartas/lista-cartas";
 
 export default function BuscadorPage() {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("");
 
-
-const { resultados, loading, error } = useSearch(query)
+  const { resultados, loading, error } = useSearch(query);
 
   return (
     <div>
       <input value={query} onChange={(e) => setQuery(e.target.value)} />
       {loading && <p>Cargando...</p>}
-{error && <p>{error}</p>}
-     <CardsList resultados={resultados}/>
+      {error && <p>{error}</p>}
+      <CardsList resultados={resultados} />
     </div>
-  )
+  );
 }
