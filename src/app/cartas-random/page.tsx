@@ -8,11 +8,6 @@ export default async function CartasRandomPage() {
     },
   });
   const data = await res.json();
-  console.log("data completo:", data);
-
-  console.log("layout:", data.layout);
-  console.log("image_uris:", data.image_uris);
-  console.log("card_faces:", data.card_faces);
 
   return (
     <div>
