@@ -7,6 +7,9 @@ export default async function CartasRandomPage() {
       Accept: "application/json",
     },
   });
+  if (!res.ok) {
+    throw new Error("Algo salió mal");
+  }
   const data = await res.json();
 
   return (
